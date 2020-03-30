@@ -4,6 +4,17 @@ class Main {
         ClienteMenor juan = new ClienteMenor();
         juan.saludar();
 
+        juan.setId(1);
+        juan.setNombre("Juan");
+        juan.setApellido("García");
+        juan.setGenero("Masculino");
+        juan.setFechaNacimiento("23/11/1999");
+        juan.setEstadocivil("Soltero");
+
+        ClienteDaoImpl clienteDao = new ClienteDaoImpl();
+        clienteDao.addCliente(juan);
+        clienteDao.printClientes();
+
         ClienteMayor pedro = new ClienteMayor();
         pedro.saludar();
         
