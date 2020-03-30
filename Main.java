@@ -71,6 +71,40 @@ class Main {
         clienteDao.updateCliente(3,pedro);
         clienteDao.printClientes();
 
+        //-------------------TipoItemDao--------------------------
+
+        TipoItem type1 = new TipoLegal();
+        type1.setDescripcion("celular");
+        type1.setIdDescripcion(2);
+        System.out.println(type.printInfo());
+        System.out.println("------------------");
+
+        TipoItem type2 = new TipoLegal();
+        type2.setDescripcion("lavadora");
+        type2.setIdDescripcion(3);
+        System.out.println(type.printInfo());
+        System.out.println("------------------");
+
+        TipoItemDaoImpl tipoItemDao = new TipoItemDaoImpl();
+        tipoItemDao.addTipoItem(type);
+        tipoItemDao.addTipoItem(type1);
+        tipoItemDao.addTipoItem(type2);
+        tipoItemDao.printTipoItem();
+        System.out.println("----------------");
+        tipoItemDao.delTipoItem(2);
+        tipoItemDao.printTipoItem();
+        System.out.println("----------------");
+        tipoItemDao.updateTipoItem(3,type1);
+        tipoItemDao.printTipoItem();
+        System.out.println("----------------");
+
+
+        //-----------------Item-------------------------------
+        
+
+
+        //-----------------FacturasDao------------------------
+
         
         
         System.out.println("--------------Fabricas---------");
