@@ -109,13 +109,18 @@ class Main2 {
 
                     System.out.println("ingrese el nuevo total:");
                     
-                    String newFecha = br.readLine();
-                    newFactura.setFechaFactura(newFecha);
+                    Double newTotal = Double.parseDouble( br.readLine() );
+                    newFactura.setTotalFactura(newTotal);
 
-                    System.out.println("Fecha modificada exitosamente.\n");
+                    System.out.println("Total modificado exitosamente.\n");
 
                 }else if( aspecto.equals("e") ){
+                    System.out.println("ingrese el nuevo estado:");
+                    
+                    String newEstado = br.readLine();
+                    newFactura.setEstado(newEstado);
 
+                    System.out.println("Estado modificado exitosamente.\n");
                 }else{
                     System.out.println("No se realizará ningún cambio.");
                 }
