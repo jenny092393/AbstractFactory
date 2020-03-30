@@ -17,7 +17,7 @@ public class FacturaDaoImpl implements FacturaDao {
     }
 
     @Override
-    public void printFactura(){
+    public void printFacturas(){
         for(Factura factura: facturas){
             System.out.println(factura.printInfo());
         }

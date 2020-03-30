@@ -4,7 +4,7 @@ public interface FacturaDao {
 
     public void addFactura(Factura factura);
 
-    public void printFactura();
+    public void printFacturas();
 
     public void delFactura(int nroFactura);
 
