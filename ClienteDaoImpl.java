@@ -24,7 +24,7 @@ public class ClienteDaoImpl implements ClienteDao {
     @Override
     public void printClientes(){
         for(Cliente cliente: clientes){
-            System.out.println();
+            System.out.println(cliente.printInfo());
         }
     }
 

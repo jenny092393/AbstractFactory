@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 public abstract class Factura {
 
     private int nroFactura;
@@ -5,20 +6,20 @@ public abstract class Factura {
     private Cliente cliente;
     private double totalFactura;
     private String estado;
-    private Item item;
+    private ArrayList <Item> items;
 
 
     
     public Factura( int nroFactura, String fechaFactura,
         Cliente cliente, double totalFactura,
-        String estado, Item item){
+        String estado, ArrayList <Item> items){
 
             this.nroFactura = nroFactura;
             this.fechaFactura = fechaFactura;
             this.cliente = cliente;
             this.totalFactura = totalFactura;
             this.estado = estado;
-            this.item = item;
+            this.items =  items;
 
     }
 
@@ -46,8 +47,16 @@ public abstract class Factura {
         return cliente;
     }
 
+    public void setCliente( Cliente cliente){
+        this.cliente = cliente;
+    }
+
     public double getTotalFactura(){
         return totalFactura;
+    }
+
+    public void setTotalFactura(double totalFactura){
+        this.totalFactura = totalFactura;
     }
 
     public String getEstado(){
@@ -58,12 +67,33 @@ public abstract class Factura {
         this.estado = estado;
     }
 
-    public Item getItem(){
-        return item;
+    public ArrayList <Item>  getItems(){
+        return items;
+    }
+
+    public void setItems(ArrayList <Item>  items){
+        this.items = items;
     }
 
     public void validarEstado(){
         System.out.println("revise el estado de su factura");
+    }
+
+    public String printItems(){
+        String str ="";
+        for(Item item: items){
+            str = str + item.printInfo();
+        }
+
+        return str;
+    }
+
+   
+
+    public String printInfo(){
+        return "Nro Factura: " + getNroFactura() + " Fecha factura: " + getFechaFactura() +
+         " Total factura: "+ Double.toString(getTotalFactura())  + " Estado: " +  getEstado()+  
+         " Cliente: " + getCliente().printInfo() + " Items: " + printItems();
     }
 
 }

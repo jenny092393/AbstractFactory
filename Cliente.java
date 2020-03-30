@@ -77,7 +77,8 @@ public abstract class Cliente {
     }
 
     public String printInfo(){
-        return "Id: "+getId()+ " Nombre: "+getNombre()+ " Apellido: " +getApellido();
+        return "Id: "+getId()+ " Nombre: "+getNombre()+ " Apellido: " +getApellido() +
+        " Genero: " + getGenero() +  " Fecha nacimiento: " +  getFechaNacimiento() + " Estado civil: " + getEstadocivil();
     }
 
     //metodo de prueba

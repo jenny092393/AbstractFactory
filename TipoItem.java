@@ -12,13 +12,16 @@ public abstract class TipoItem {
         
     }
 
+    
+
+    public void setIdDescripcion (int idDescripcion){
+        this.idDescripcion = idDescripcion;
+    }
+
     public int getIdDescription(){
         return idDescripcion;
     }
 
-    private void setIdDescripcion(int idDescripcion){
-        this.idDescripcion = idDescripcion;
-    }
 
     public String getDescripcion(){
         return descripcion;
@@ -30,6 +33,10 @@ public abstract class TipoItem {
 
     public void validarLegaliad(){
         System.out.println("Hola soy un ubjeto de dudosa procedencia ");
+    }
+
+    public String printInfo(){
+        return "Id: " + getIdDescription() + " Descripcion: " + getDescripcion();
     }
     
 }

@@ -1,7 +1,7 @@
 public abstract class Item {
     private TipoItem tipoItem;
     private int id;
-    private String Descripcion;
+    private String descripcion;
     private double valorUnidad;
 
     
@@ -22,6 +22,10 @@ public abstract class Item {
         return tipoItem;
     }
 
+    public void setTipoItem( TipoItem tipoItem){
+        this.tipoItem = tipoItem;
+    }
+
     public int getId(){
         return id;
     }
@@ -38,7 +42,20 @@ public abstract class Item {
         this.valorUnidad = valorUnidad;
     }
 
+    public String getDescripcion(){
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion){
+        this.descripcion = descripcion;
+    }
+
     public void consultarEstado(){
         System.out.println("revisar disponibilidad");
+    }
+
+    public String printInfo(){
+        return "Id: " + getId() + " Descripcion: " + getDescripcion() + " Valor unidad: " + getValorUnidad() +
+         " Tipo Items: " + getTipoItem().printInfo();
     }
 }
