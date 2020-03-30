@@ -31,15 +31,16 @@ public class ClienteDaoImpl implements ClienteDao {
     @Override
     public void delCliente(int idCliente){
         int index = 0;
-
         for(Cliente cliente: clientes){
-
+            System.out.println("entre");
             if( cliente.getId() == idCliente ){
-                clientes.remove(index);
+                break;
             }
-
             index++;
         }
+        clientes.remove(index);
+
+        
     }
 
     @Override

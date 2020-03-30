@@ -26,11 +26,12 @@ class TipoItemDaoImpl implements TipoItemDao{
 
         for(TipoItem tipoItem: tipoItems){
             if(tipoItem.getIdDescription() == idTipoInfo){
-                tipoItems.remove(index);
+                break;
             }
 
             index++;
         }
+        tipoItems.remove(index);
     }
 
     @Override

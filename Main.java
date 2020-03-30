@@ -42,8 +42,8 @@ class Main {
         item1.setTipoItem(type);
         System.out.println(item1.printInfo());
 
-        ArrayList <Item> items = new ArrayList<>();
-        items.add(item1);
+        ArrayList <Item> itemsFacturas = new ArrayList<>();
+        itemsFacturas.add(item1);
 
         
 
@@ -53,7 +53,7 @@ class Main {
         factura1.setCliente(juan);
         factura1.setTotalFactura(3000.0);
         factura1.setEstado("pagado");
-        factura1.setItems(items);
+        factura1.setItems(itemsFacturas);
         System.out.println(factura1.printInfo());
         System.out.println("------------------");
 
@@ -65,10 +65,10 @@ class Main {
         clienteDao.addCliente(ana);
         clienteDao.printClientes();
         System.out.println("------------------");
-        clienteDao.delCliente(2);
+        clienteDao.delCliente(1);
         clienteDao.printClientes();
         System.out.println("------------------");
-        clienteDao.updateCliente(3,pedro);
+        clienteDao.updateCliente(1,ana);
         clienteDao.printClientes();
 
         //-------------------TipoItemDao--------------------------
@@ -100,12 +100,78 @@ class Main {
 
 
         //-----------------Item-------------------------------
-        
+        System.out.println("----------Items Dao----------");
+        Item item2 = new ItemLocal();
+        item2.setId(2);
+        item2.setDescripcion("Jordan 3033");
+        item2.setValorUnidad(5000.0);
+        item2.setTipoItem(type2);
+        //System.out.println(item2.printInfo());
 
+        Item item3 = new ItemLocal();
+        item3.setId(3);
+        item3.setDescripcion("Rebook 3033");
+        item3.setValorUnidad(10000.0);
+        item3.setTipoItem(type2);
+        //System.out.println(item3.printInfo());
+
+        ItemDaoImpl itemDao = new ItemDaoImpl();
+
+        itemDao.addItem(item1);
+        itemDao.addItem(item2);
+        itemDao.addItem(item3);
+        
+        itemDao.printItem();
+        System.out.println("-----------");
+
+        itemDao.delItem(3);
+        itemDao.printItem();
+        System.out.println("-----------");
+        itemDao.updateItem(2,item3);
+        itemDao.printItem();
+        System.out.println("-----------");
+        
 
         //-----------------FacturasDao------------------------
+        FacturaDaoImpl facturasDao = new FacturaDaoImpl();
+        
+        Factura factura2 = new FacturaPagada();
+        factura2.setNroFactura(2);
+        factura2.setFechaFactura("20/01/2000");
+        factura2.setCliente(pedro);
+        factura2.setTotalFactura(3000.0);
+        factura2.setEstado("deuda");
+        factura2.setItems(itemsFacturas);
+        System.out.println(factura1.printInfo());
+        System.out.println("------------------");
+
+        Factura factura3 = new FacturaPagada();
+        factura3.setNroFactura(3);
+        factura3.setFechaFactura("20/01/2000");
+        factura3.setCliente(ana);
+        factura3.setTotalFactura(3000.0);
+        factura3.setEstado("vencida");
+        factura3.setItems(itemsFacturas);
+        System.out.println(factura1.printInfo());
+        System.out.println("------------------");
+
+        System.out.println("---------------FacturasDao------------");
+        facturasDao.addFactura(factura1);
+        facturasDao.addFactura(factura2);
+        facturasDao.addFactura(factura3);
+        facturasDao.printFactura();
+        System.out.println("------------------");
+        facturasDao.delFactura(3);
+        facturasDao.printFactura();
+        System.out.println("------------------");
+        facturasDao.updateFactura(2,factura3);
+        facturasDao.printFactura();
+        System.out.println("------------------");
 
         
+
+
+        /*
         
         System.out.println("--------------Fabricas---------");
         FactoryProvider provider = new FactoryProvider();
@@ -128,6 +194,6 @@ class Main {
         factory = provider.getFactory("tipoFactory");
         TipoItem tipoItem = factory.getTypeItem("tipoIlegal");
         tipoItem.validarLegaliad();
-
+        */
     }
 }
