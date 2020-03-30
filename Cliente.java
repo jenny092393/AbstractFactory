@@ -76,6 +76,10 @@ public abstract class Cliente {
         this.fechaNacimiento = fechaNacimiento;
     }
 
+    public String printInfo(){
+        return "Id: "+getId()+ " Nombre: "+getNombre()+ " Apellido: " +getApellido();
+    }
+
     //metodo de prueba
     public void probar(){
     

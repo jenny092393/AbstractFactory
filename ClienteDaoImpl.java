@@ -9,33 +9,24 @@ import java.util.List;
 
 public class ClienteDaoImpl implements ClienteDao {
 
-    
-    
+    //list is working as a database
+    public ArrayList<Cliente> clientes;
 
     public ClienteDaoImpl() {
-        clientes = 
+        clientes = new ArrayList<>();
     }
 
     @Override
-    public void addCliente(String tipoCliente, int id, String nombre, String apellido, String genero, String fechaNacimiento, String estadoCivil){
-        //super();
-        
-        FactoryProvider provider = new FactoryProvider();
-        AbstractFactory factory = provider.getFactory("clienteFactory");
-        Cliente cliente = factory.getCliente("clienteMenor");
-        
-        cliente.setId(id);
-        cliente.setNombre(nombre);
-        cliente.setApellido(apellido);
-        cliente.setGenero(genero);
-        cliente.setFechaNacimiento(fechaNacimiento);
-        cliente.setEstadocivil(estadoCivil);
-
-        
+    public void addCliente(Cliente cliente){
         clientes.add(cliente);
     }
 
-
+    @Override
+    public void printClientes(){
+        for(Cliente cliente: clientes){
+            System.out.println();
+        }
+    }
 
     /*
     @Override

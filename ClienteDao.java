@@ -6,10 +6,10 @@ import java.util.List;
 
 public interface ClienteDao {
 
-    //list is working as a database
-    public ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+    public void addCliente(Cliente cliente);
 
-    public void addCliente(String tipoCliente, int id, String nombre, String apellido, String genero, String fechaNacimiento, String estadoCivil);
+    public void printClientes();
+
     /*
     List<Books> getAllBooks();
     Books getBookByIsbn(int isbn);
