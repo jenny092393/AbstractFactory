@@ -1,9 +1,10 @@
-class Item {
+public abstract class Item {
     private TipoItem tipoItem;
     private int id;
     private String Descripcion;
     private double valorUnidad;
 
+    
     public Item(TipoItem tipoItem, int id,
          double valorUnidad){
 
@@ -11,6 +12,10 @@ class Item {
         this.id = id;
         this.valorUnidad = valorUnidad;
 
+    }
+
+    public Item(){
+        
     }
 
     public TipoItem getTipoItem(){
@@ -31,5 +36,9 @@ class Item {
 
     public void setValorUnidad(double valorUnidad){
         this.valorUnidad = valorUnidad;
+    }
+
+    public void consultarEstado(){
+        System.out.println("revisar disponibilidad");
     }
 }

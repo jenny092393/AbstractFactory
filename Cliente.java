@@ -9,7 +9,7 @@ public abstract class Cliente {
     private String fechaNacimiento;
     private String estadoCivil;
 
-    /*
+    
 
     public Cliente(int id, String nombre,
         String apellido, String genero,
@@ -22,7 +22,11 @@ public abstract class Cliente {
             this.fechaNacimiento = fechaNacimiento;
             this.estadoCivil = estadoCivil;
 
-    }*/
+    }
+
+    public Cliente(){
+        
+    }
 
     public int getId(){
         return id;

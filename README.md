@@ -1,6 +1,6 @@
 # AbstractFactory
 
 
-Adaptar el patron para la clase Item y TipoItem así mismo como se hizo en Cliente y Factura
+Revisar la relevancia de los constructores.
 
 Perdón por los machetazos hace rato no usana java :(

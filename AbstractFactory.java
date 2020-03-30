@@ -6,5 +6,15 @@ public abstract class AbstractFactory {
     public Factura getFactura(String facturaType){
         return null;
     }
+
+    public Item getItem(String itemType){
+        return null;
+    }
+
+    public TipoItem getTypeItem(String typeItem ){
+        return null;
+    }
+
+    
     
 }

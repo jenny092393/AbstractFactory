@@ -8,7 +8,7 @@ public abstract class Factura {
     private Item item;
 
 
-    /*
+    
     public Factura( int nroFactura, String fechaFactura,
         Cliente cliente, double totalFactura,
         String estado, Item item){
@@ -20,7 +20,11 @@ public abstract class Factura {
             this.estado = estado;
             this.item = item;
 
-    }*/
+    }
+
+    public Factura(){
+        
+    }
 
     public int getNroFactura(){
         return nroFactura;
