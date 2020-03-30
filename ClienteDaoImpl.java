@@ -28,25 +28,31 @@ public class ClienteDaoImpl implements ClienteDao {
         }
     }
 
-    /*
     @Override
-    public List<Books> getAllBooks() {
-        return books;
+    public void delCliente(int idCliente){
+        int index = 0;
+
+        for(Cliente cliente: clientes){
+
+            if( cliente.getId() == idCliente ){
+                clientes.remove(index);
+            }
+
+            index++;
+        }
     }
 
     @Override
-    public Books getBookByIsbn(int isbn) {
-        return books.get(isbn);
-    }
+    public void updateCliente(int idCliente, Cliente newCliente){
+        int index = 0;
 
-    @Override
-    public void saveBook(Books book) {
-        books.add(book);
-    }
+        for(Cliente cliente: clientes){
 
-    @Override
-    public void deleteBook(Books book) {
-        books.remove(book);
+            if( cliente.getId() == idCliente ){
+                clientes.set(index, newCliente);
+            }
+
+            index++;
+        }
     }
-    */
 }

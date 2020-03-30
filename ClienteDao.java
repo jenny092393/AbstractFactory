@@ -10,9 +10,7 @@ public interface ClienteDao {
 
     public void printClientes();
 
-    /*
-    List<Books> getAllBooks();
-    Books getBookByIsbn(int isbn);
-    void saveBook(Books book);
-    void deleteBook(Books book);*/
+    public void delCliente(int idCliente);
+
+    public void updateCliente(int idCliente, Cliente cliente);
 }
