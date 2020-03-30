@@ -159,13 +159,13 @@ class Main {
         facturasDao.addFactura(factura1);
         facturasDao.addFactura(factura2);
         facturasDao.addFactura(factura3);
-        facturasDao.printFactura();
+        facturasDao.printFacturas();
         System.out.println("------------------");
         facturasDao.delFactura(3);
-        facturasDao.printFactura();
+        facturasDao.printFacturas();
         System.out.println("------------------");
         facturasDao.updateFactura(2,factura3);
-        facturasDao.printFactura();
+        facturasDao.printFacturas();
         System.out.println("------------------");
 
         
